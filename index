@@ -6,9 +6,9 @@
     <title>PULGONAUTAS MALASAÑA</title> <!-- Título de la página -->
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script> <!-- Carga el Script de A-Frame -->
 </head> <!-- Fin de encabezado -->
-<body> <!--inicio del cuerpo>
+<body> <!--inicio del cuerpo-->
 <!-- Primer objeto -->
         <a-entity obj-model="obj:./pulgonauta.obj; mtl:./pulgonauta.mtl" position="0 0 0" ></a-entity>
 
-</body> <!-- FIn del cuerpo>
+</body> <!-- FIn del cuerpo-->
 </html>
