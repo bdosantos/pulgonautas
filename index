@@ -8,6 +8,6 @@
 </head> <!-- Fin de encabezado -->
 <body> <!--inicio del cuerpo>
 <!-- Primer objeto -->
-        <a-entity obj-model="obj:./malasat.obj; mtl:./malasat.mtl" position="0 0 0" ></a-entity>
+        <a-entity obj-model="obj:./pulgonauta.obj; mtl:./pulgonauta.mtl" position="0 0 0" ></a-entity>
 
 </body> <!-- FIn del cuerpo>
