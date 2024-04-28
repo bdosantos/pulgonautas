@@ -1,14 +1,28 @@
-<!DOCTYPE html> <!-- documento de HTML5 -->
-<html lang="en"> <!-- idioma inglés -->
-<head> <!-- inicio de encabezado -->
-    <meta charset="UTF-8"> <!-- especifica la codificación de caracteres como UTF-8 -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- especifica la configuración de la vista en dispositivos móviles -->
-    <title>PULGONAUTAS MALASAÑA</title> <!-- Título de la página -->
-    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script> <!-- Carga el Script de A-Frame -->
-</head> <!-- Fin de encabezado -->
-<body> <!--inicio del cuerpo-->
-<!-- Primer objeto -->
-        <a-entity obj-model="obj:./pulgonauta.obj; mtl:./pulgonauta.mtl" position="0 0 0" ></a-entity>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PULGONAUTAS MALASAÑA</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+</head>
+<body>
+    <a-scene>
+        <!-- Luz ambiente -->
+        <a-light type="ambient" color="#FFFFFF" intensity="0.5"></a-light>
+        
+        <!-- Luz direccional -->
+        <a-light type="directional" color="#FFFFFF" intensity="1" position="2 4 3"></a-light>
+        
+        <!-- Objeto 3D -->
+        <a-entity obj-model="obj: #pulgonauta-obj; mtl: #pulgonauta-mtl" position="0 0 -5"></a-entity>
 
-</body> <!-- FIn del cuerpo-->
+        <!-- Carga de modelos -->
+        <a-assets>
+            <a-asset-item id="pulgonauta-obj" src="pulgonauta.obj"></a-asset-item>
+            <a-asset-item id="pulgonauta-mtl" src="pulgonauta.mtl"></a-asset-item>
+        </a-assets>
+    </a-scene>
+</body>
 </html>
+
