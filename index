@@ -11,3 +11,4 @@
         <a-entity obj-model="obj:./pulgonauta.obj; mtl:./pulgonauta.mtl" position="0 0 0" ></a-entity>
 
 </body> <!-- FIn del cuerpo>
+</html>
