@@ -10,11 +10,15 @@
     <a-scene>
     <!-- Carga de modelos -->
       <a-assets>
-         <a-asset-item id="museo-glb" src="museo.glb"></a-asset-item>   
+         <a-asset-item id="museo-glb" src="museo.glb"></a-asset-item>
+          <a-asset-item id="dosplantas-glb" src="dosplantas.glp"></a-asset-item>
            </a-assets>
        
       <!-- Modelo 3D del museo -->
       <a-entity gltf-model="#museo-glb" scale="40 20 40">
+          <!--objetos dentro del museo-->
+           <!-- dosplantas-->
+          <a-entity gltf-model="#dosplantas" position="5 2 -15" scale="1 1 1"> </a-entity>
 
             <!-- Cámara dentro del museo con controles de mira y controles WASD -->
           <a-entity camera look-controls wasd-controls position="0 3 3"></a-entity>
