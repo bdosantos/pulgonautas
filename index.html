@@ -13,26 +13,29 @@
             <a-asset-item id="museo-glb" src="museo.glb"></a-asset-item>
             <a-asset-item id="dosplantas-glb" src="dosplantas.glb"></a-asset-item>
             <a-asset-item id="sirfido-glb" src="sirfido.glb"></a-asset-item>
-            <a-asset-item id="hormiga-glb" src="hormiga.glb"></a-asset-item> <!-- Ajusta la ID del modelo -->
+            <a-asset-item id="hormigas_linea-glb" src="hormigas_linea.glb"></a-asset-item>
             <a-asset-item id="cartel1-glb" src="cartel1.glb"></a-asset-item>
             <a-asset-item id="larva-glb" src="larva.glb"></a-asset-item>
-            <a-asset-item id="Malasana-glb" src="Malasana.glb"></a-asset-item>
+            <a-asset-item id="Malasana-glb" src="Malasana.glb"></a-asset-item> <!-- Ajusta la ID del modelo -->
         </a-assets>
         
         <!-- Modelo 3D del museo -->
         <a-entity gltf-model="#museo-glb" scale="100 75 100">
             <!-- Objetos dentro del museo -->
             <!-- dosplantas -->
-            <a-entity gltf-model="#dosplantas-glb" position="5 0 160" scale="7 7 7"></a-entity>
-            <a-entity gltf-model="#sirfido-glb" position="0 0 -30" scale="1 1 1"></a-entity>
-            
+            <a-entity gltf-model="#dosplantas-glb" position="190 0 160" scale="7 7 7"></a-entity>
+            <a-entity gltf-model="#sirfido-glb" position="0 0 -30" scale="2 2 2"></a-entity>
+            <a-entity gltf-model="#hormigas_linea-glb" position="28 0 -10" scale="2 2 2"></a-entity>
+            <a-entity gltf-model="#hormigas_linea-glb" position="28 0 -50" scale="2 2 2"></a-entity>
+            <a-entity gltf-model="#hormigas_linea-glb" position="28 0 -10" scale="3 3 3"></a-entity>
+            <a-entity gltf-model="#hormigas_linea-glb" position="28 0 -100" scale="3 3 3"></a-entity>
             <!-- Ajustamos la rotación para que el cartel aparezca verticalmente -->
             <a-entity gltf-model="#cartel1-glb" position="0 60 -340" scale="4 4 4" rotation="90 0 0"
                       link="href: https://www.instagram.com/p/C66p_GgNARZ/?igsh=cWFuNzkyZ3c0dHBl"></a-entity>
             <a-entity gltf-model="#larva-glb" position="-50 -2 -50" scale="1 1 1"></a-entity>
             
             <!-- Objeto "Malasana" -->
-            <a-entity gltf-model="#Malasana-glb" position="-40 6 0" scale="1 1 1"></a-entity>
+            <a-entity gltf-model="#Malasana-glb" position="-230 70 190" scale="3 3 3" rotation="-90 180 90"></a-entity> <!-- Ajusta posición, escala y rotación -->
             
             <!-- Cámara dentro del museo con controles de mira y controles WASD -->
             <a-entity camera look-controls wasd-controls position="-80 60 -100"></a-entity>
@@ -43,33 +46,7 @@
         <!-- Luz puntual para iluminar el interior del museo -->
         <a-light type="point" color="#FFFFFF" intensity="0.8" position="0 10 0"></a-light>
         
-        <!-- Script para crear y animar 20 hormigas -->
-        <script>
-            // Función para crear y animar una hormiga
-            function createAnt(index) {
-                var scene = document.querySelector('a-scene');
-                var ant = document.createElement('a-entity');
-                ant.setAttribute('gltf-model', '#hormiga-glb');
-                ant.setAttribute('scale', '3 3 3');
-                ant.setAttribute('position', '28 0 -340'); // Inicialmente en z=-340
-                var animation = document.createElement('a-animation');
-                animation.setAttribute('attribute', 'position');
-                animation.setAttribute('to', '28 0 160'); // Se mueve hasta z=160
-                animation.setAttribute('direction', 'alternate');
-                animation.setAttribute('dur', '5000'); // Duración de la animación
-                animation.setAttribute('easing', 'linear');
-                animation.setAttribute('repeat', 'indefinite');
-                ant.appendChild(animation);
-                scene.appendChild(ant);
-            }
-            
-            // Crear y animar 20 hormigas
-            for (var i = 0; i < 20; i++) {
-                setTimeout(createAnt, i * 1000, i); // Cada hormiga sale cada segundo
-            }
-        </script>
     </a-scene>
 </body>
 </html>
-
 
